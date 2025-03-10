@@ -21,5 +21,5 @@ let a = 1000;           // do while is used when we want to execute the block of
 do{
     console.log(a);
     a++
-}while(a<=10)
+}while(a<=10);
     

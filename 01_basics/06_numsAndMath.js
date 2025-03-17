@@ -5,6 +5,7 @@ console.log(num);
 
 let float = 45.6
 console.log(float);
+console.log(String(float));
 console.log(float.toString());
 console.log(float.toFixed(3));             // How much numbers will we want to see after .(point) in a floating point number
 

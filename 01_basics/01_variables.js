@@ -1,8 +1,8 @@
 const pi = 3.14
 let name = "Binod"          // let is used for local scope      // Always use let and const instead of var
 var number = 8874837434     // var is used for global scope
-city = "Nathdwara"      //This is not recommanded to declare the variable like this.
-let id                  // In js we can declare variable without initialize it. It will be undefined.
+city = "Nathdwara"          //This is not recommanded to declare the variable like this. 
+let id                      // In js we can declare variable without initialize it. It will be undefined.
 
 console.log(pi,name,number,city);
 

@@ -6,7 +6,7 @@
 let name = "John";    // string
 let age = 25;         // number
 let isAdmin = true;    // boolean
-let PI = 3.14;         // float
+let PI = 3.14;         // number | In js int and float both are traet as a number 
 let isNull = null;     // Null
 let isUndefined          // Undefined
 

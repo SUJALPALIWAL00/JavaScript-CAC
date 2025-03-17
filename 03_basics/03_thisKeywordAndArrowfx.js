@@ -57,4 +57,5 @@ console.log(sum(2, 3));
 const sum1 = (num1, num2) => num1 + num2;    // If we have only one line of code then we can remove the curly braces and return keyword
 const sum2 = (num1, num2) => (num1 + num2);  // This also works
 const sum3 = () => ({name: "Sujal"});  // If we want to return object then we have to wrap it in the parenthesis
-c
+
+

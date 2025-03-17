@@ -4,7 +4,7 @@ let array1 = [1000, true];
 // array.push(array1)
 // console.log(array);
 
-let newArray = array.concat(array1);  // This will concatenate the two arrays and return a new array
+let newArray = array.concat(array1);  // This will concatenate the both array elemenst and return a new array
 console.log(newArray);
  
 // let allArray = [...array, ...array1];  // This method is called spread operator and it will concatenate the two arrays and return a new array

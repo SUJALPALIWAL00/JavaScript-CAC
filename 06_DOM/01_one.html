@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selector</title>
+    <style>
+        .bgblack {
+            background-color: #17181C;
+            color: white;
+        }
+        .orgcolor {
+            color: #FC7501;
+        }
+        #heading{
+            font-size: 45px;
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bgblack">
+    <h1 id="heading" class="orgcolor">DOM Selector <span>with Sujal Paliwal</span></h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+
+    <ul>
+        <li class="list-item">Home</li>
+        <li class="list-item">About Us</li>
+        <li class="list-item">Contact Us</li>
+    </ul>
+    
+</body>
+</html>
+
+
+<!-- ***************** Console Code **************** -->
+
+<!-- document.getElementById("heading")
+<h1 id=​"heading" class=​"orgcolor">​…​</h1>​
+let elem = document.getElementById("heading")
+undefined
+
+elem.innerHTML
+'DOM Selector <span>with Sujal Paliwal</span>'
+
+elem.textContent
+'DOM Selector with Sujal Paliwal'
+
+elem.innerText
+'DOM Selector with Sujal Paliwal' -->
+
+<!-- 
+document.getElementsByClassName("bgblack")
+HTMLCollection [body.bgblack]                        // It will return an HTML Collection -->
+
+
+<!-- let heading = document.querySelector("h3")
+undefined
+
+heading.style.backgroundColor = "Tomato"
+'Tomato'
+
+heading.style.color = "blue"
+'blue' -->
+
+<!-- document.querySelectorAll("li")
+NodeList(3) [li, li, li]                 //querySelector gives only 1st element on the page but querySelectorAll all gives the node list of all the elements | Node list are different from array             -->                
+
+
+<!-- document.getElementsByClassName("list-item")
+HTMLCollection(3) [li.list-item, li.list-item, li.list-item]
+
+let listItem = document.getElementsByClassName("list-item")
+undefined
+
+Array.from(listItem)
+(3) [li.list-item, li.list-item, li.list-item]
+
+let convertedArray = Array.from(listItem)
+undefined
+
+convertedArray.forEach((el)=>{              //forEach loop on array  | We can also use for-each loop on a node list
+    el.style.color = "blue"
+})
+undefined -->
+
+<!-- Manipulating website Content -->
+<!-- This code is run for a online webpage -->
+<!-- document.querySelectorAll('h2')
+ NodeList(14) [h2.vector-pinnable-header-label, h2#History, h2#Trademark, h2#Website_client-side_usage, h2#Other_usage, h2#Execution, h2#Features, h2#Syntax, h2#Security, h2#Development_tools, h2#Related_technologies, h2#References, h2#Further_reading, h2#External_links]0: h2.vector-pinnable-header-label1: h2#History2: h2#Trademark3: h2#Website_client-side_usage4: h2#Other_usage5: h2#Execution6: h2#Features7: h2#Syntax8: h2#Security9: h2#Development_tools10: h2#Related_technologies11: h2#References12: h2#Further_reading13: h2#External_linkslength: 14[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+ 
+ let h2List = document.querySelectorAll('h2')
+ undefined
+
+ h2List.forEach((elem)=>{
+     elem.style.color = "green"
+ })
+ undefined
+
+ h2List.forEach((elem)=>{
+     elem.style.color = "green";
+     elem.style.backgroundColor = "Blue"
+ })
+ undefined -->
+
+

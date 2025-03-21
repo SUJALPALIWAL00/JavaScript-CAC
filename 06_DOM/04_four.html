@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding edit and remove an element from DOM</title>
+</head>
+<body>
+    <ul>
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    document.body.style.backgroundColor = "grey";
+
+    // *************Function for adding a new element*************
+    function addLanguage(langName){
+        let li = document.createElement("li");
+        li.innerText = langName;
+        let ul = document.querySelector('ul')
+        ul.appendChild(li)
+    }
+    addLanguage("Python");
+    addLanguage("Java");
+
+    // *************Edit an element*************
+    let secondlang = document.querySelector('li:nth-child(2)');
+    secondlang.innerHTML = "C++";
+    // secondlang.outerHTML = "<li>Django</li>";
+    let newlang = document.createElement("li");
+    newlang.textContent = "Flask";
+    secondlang.replaceWith(newlang);
+
+    // *************Remove an element*************
+    let lastElement = document.querySelector('li:last-child');
+    lastElement.remove();
+</script>
+</html>

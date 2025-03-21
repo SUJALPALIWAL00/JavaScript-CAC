@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Color Changer</title>
+    <style>
+        body {
+            background-color: #212121;
+        }
+
+        h1 {
+            text-align: center;
+            color: #866810;
+        }
+        .buttons{
+            text-align: center;
+        }
+        .button{
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            margin: 2px;
+            display: inline-block;
+        }
+        #green{
+            background-color: green;
+        }
+        #burlywood{
+            background-color: burlywood;
+        }
+        #red{
+            background-color: red;
+        }
+        #white{
+            background-color: white;
+        }
+        #hotpink{
+            background-color: hotpink;
+        }
+
+        p{
+            text-align: center;
+            color: rgb(120, 195, 211);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Background Color Changer</h1>
+
+    <div class="buttons">
+        <span class="button" id="green"></span>
+        <span class="button" id="burlywood"></span>
+        <span class="button" id="red"></span>
+        <span class="button" id="white"></span>
+        <span class="button" id="hotpink"></span>
+    </div>
+    <p>Click on any color to change the background of the page</p>
+    <script>
+        let body = document.body;
+        let buttons = document.body.querySelectorAll('.button')
+        console.log(buttons);
+
+        buttons.forEach((btn)=>{
+            btn.addEventListener('click',(e)=>{             
+                document.body.style.backgroundColor = btn.id
+            })
+        })
+    </script>
+</body>
+
+</html>

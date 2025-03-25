@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        h1 {
+            color: #70551c;
+            text-decoration: underline yellow 2px;
+            text-underline-offset: 10px;
+        }
+
+        pre {
+            font-size: 24px;
+        }
+
+        h2 {
+            margin-bottom: 0px;
+        }
+
+        input {
+            width: 250px;
+            height: 25px;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 5px 10px;
+        }
+
+        p {
+            margin: 10px;
+        }#hi-low{
+            height: 35px;
+        }
+        .newGameBtn{
+            background-color: #4CAF50;
+               
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Number Guessing Game</h1>
+    <pre>Guess a number between 1 and 100
+You have 10 attempts to guess the right number
+    </pre>
+    <form action="" id="form">
+        <h2>Guess The Number</h2>
+        <input type="number" id="input">
+        <button id="btn" >Submit Guess</button>
+    </form>
+    <p>Previous Guesses: <span id="pre-guess"></span></p>
+    <p>Guess Remaining: <span id="guess-rem">10</span></p>
+    <p id="hi-low"></p>
+
+    <script>
+        let remainingGuess = 10;
+
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let form = document.getElementById('form')
+        let hiLow = document.getElementById('hi-low')
+        let allGuessValues = []
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            
+            remainingGuess--
+            if (remainingGuess > 0) {
+                let userGuessNumber = document.getElementById('input').value
+                allGuessValues.push(userGuessNumber)
+                if(form){
+                form.reset()
+                }
+                document.getElementById('pre-guess').innerText = allGuessValues
+                document.getElementById('guess-rem').innerText = remainingGuess
+                if (userGuessNumber < 1 || userGuessNumber > 100) {
+                    hiLow.innerHTML = "Please Enter a number between 1 and 100"
+                } else {
+                    if (userGuessNumber == randomNumber) {
+                        hiLow.innerHTML = "Congratulation you Guess the correct number "
+                    } else if (userGuessNumber < randomNumber) {
+                        hiLow.innerHTML = "Your Number is smaller"
+                    }
+                    else {
+                        hiLow.innerHTML = "Your Number is Greater"
+                    }
+                }
+            }
+            else{
+                hiLow.innerHTML = `Game Over the number was ${randomNumber}`
+                document.getElementById('btn').disabled = true
+                
+            }
+
+        })
+
+        let newGamebtn = document.createElement('button')
+        newGamebtn.innerText = "New Game"
+                newGamebtn.classList.add('newGameBtn')
+                document.body.appendChild(newGamebtn)
+                newGamebtn.addEventListener('click',()=>{
+                    location.reload()
+                })
+
+    </script>
+</body>
+
+</html>

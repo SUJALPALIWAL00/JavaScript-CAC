@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+            font-size: 50px;
+
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #box {
+            height: 200px;
+            width: 600px;
+            background-color: yellow;
+            border-radius: 50px;
+            color: black;
+            font-size: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="title">Current Time</div>
+        <div id="box"></div>
+    </div>
+
+    <script>
+        setInterval(() => {
+            let box = document.getElementById('box')
+            let time = new Date().toLocaleTimeString()
+            box.innerHTML = time
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In Browser</title>
+</head>
+<body>
+    <h2>Images</h2>
+    <div class="images">
+        <ul>
+            <li><img width="200px" height="150px" src = "https://images.pexels.com/photos/1090393/pexels-photo-1090393.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" id="one"></li>
+            <li><img width="200px" height="180px" src = "https://images.pexels.com/photos/1758144/pexels-photo-1758144.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" id="two"></li>
+            <!-- <li><img width="200px" height="180px" src = "https://images.pexels.com/photos/1758144/pexels-photo-1758144.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" id="two" onclick="alert('Image Clicked by syntax 1')"></li>    // Syntax 1 | This Method is not recommanded -->
+            <li><img width="200px" height="180px" src = "https://images.pexels.com/photos/1376042/pexels-photo-1376042.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" id="three"></li>
+            <li><img width="200px" height="180px" src = "https://images.pexels.com/photos/20415076/pexels-photo-20415076/free-photo-of-model-fashion-shoot.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" id="four"></li>
+            <li><img width="200px" height="150px" src = "https://th.bing.com/th/id/OIP.r60Htz0_MGMSKJP9x80Y5wHaE4?w=283&h=187&c=7&r=0&o=5&dpr=2&pid=1.7" alt="" id="five"></li>
+            <li><a href="https://www.google.com/">Google</a></li>
+        </ul>
+    </div>
+    <script>
+        // document.getElementById('two').onclick = ()=>{    // Syntax 2 | Their is no any problem in this method but syntax 3 is more recommanded
+        //     alert('Image Clicked by syntax 2');
+        // }
+
+        // let imageTwo = document.getElementById('two');
+        // imageTwo.addEventListener('click',()=>{         // Syntax 3 | This Method is recommanded bcz between in this method we get an event object which is very useful
+        //   alert('Image Clicked by syntax 3');
+        // })
+
+        let ul = document.querySelector('ul');
+        let imageThree = document.getElementById('three');
+
+        // Their are two types of event bubbling and capturing | By default it is bubbling but we can change it to capturing by passing the third argument in addEventListener method to true
+        // ul.addEventListener('click',()=>{
+        //     alert('Ul Clicked')
+        // },false)             
+        // imageThree.addEventListener('click', () => {
+        //     alert('Image Clicked')
+        // },false)            
+
+        // let link = document.querySelector('a');
+        // link.addEventListener('click',(e)=>{
+        //     e.preventDefault();     // This will prevent the default behaviour of the link
+        //     e.stopPropagation();    // This will stop the event bubbling or capturing
+        //     alert('Link Clicked')
+        // })
+
+        document.querySelector('ul').addEventListener('click',(e)=>{
+            console.log(e.target);
+            console.log(e.target.parentNode);
+            if (e.target.tagName === 'IMG') {
+                e.target.parentNode.remove();
+            }
+        })
+    </script>
+</body>
+</html>

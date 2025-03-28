@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+
+<body>
+    <h2>Set Interval</h2>
+    <h3>You can start and stop printing time in console</h3>
+    
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <script>
+        // let printDate = setInterval(()=>{
+        //     // console.log("Sujal")            // This will print in console in every 1 minutes
+        //     let date = new Date()
+        //     console.log(date.toLocaleTimeString());
+        // },1000)
+
+        // document.getElementById('StopBtn').addEventListener('click',()=>{
+        //     clearInterval(printDate);
+        // })
+
+        let printDate
+        document.getElementById('startBtn').addEventListener('click', () => {
+            printDate = setInterval(() => {
+                let date = new Date()
+
+                console.log(date.toLocaleTimeString());
+            }, 1000)
+        })
+        document.getElementById('stopBtn').addEventListener('click', () => {
+            clearInterval(printDate);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout</title>
+</head>
+<body>
+    <h1>Hello Janta</h1>
+    <button id="sorryBtn">STOP Sorry</button>
+    <button id="helloBtn">STOP Hello</button>
+    <h2></h2>
+    <script>
+        let h = document.querySelector('h1');
+        let btn = document.querySelector('button')
+        let sorryTimeout = setTimeout(()=>{
+            h.innerText = "Sorry... Sorry... Sorry... "
+        },2000)
+         let helloWorldTimeout = setTimeout(()=>{
+            h.innerText = "Hello World"
+        },4000)
+
+        document.getElementById('sorryBtn').addEventListener('click',()=>{
+            clearTimeout(sorryTimeout)                                      // Here we give the reference to the setTiomeout Function whom we want to cancel
+        })
+        document.getElementById('helloBtn').addEventListener('click',()=>{
+            clearTimeout(helloWorldTimeout)
+        })
+
+
+        // We can also pass a callback as a function reference
+        
+        function greet(name){
+            document.querySelector('h2').innerHTML = `Hello ${name}`
+        }
+        setTimeout(greet,5000,"Sujal")                              // Syntax for passing the argument in the fx reference
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th, td{
+            border: 2px solid black;
+           
+        }
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(3, 93, 3);">
+        <div id="insert"></div>
+    <script>
+        window.addEventListener('keydown',(e)=>{
+            document.getElementById('insert').innerHTML = `
+            <table>
+                <tr>
+                    <th>KeyCode</th>
+                    <th>Key</th>
+                </tr>
+                <tr>
+                    <td >${e.keyCode}</td>
+                    <td >${e.key}</td>
+                </tr>
+            </table>`
+        })
+    </script>
+</body>
+</html>

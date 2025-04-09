@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="weather"></div>
+    <script>
+        const API_KEY = "961bbc7eb8a71a8c52ca8a66f3cacdca";
+const city = "udaipur"; 
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+async function getWeather() {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        document.getElementById("weather").innerHTML = `
+            <h2>${data.name}</h2>
+            <p>Temperature: ${data.main.temp}°C</p>
+            <p>Weather: ${data.weather[0].description}</p>
+        `;
+    } catch (error) {
+        console.error("Error fetching weather data:", error);
+    }
+}
+
+getWeather();
+
+    </script>
+</body>
+</html>

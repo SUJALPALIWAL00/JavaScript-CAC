@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <style>
+    :root{
+      --primary-color: #212121;
+      --secondary-color: #915D09;
+    }
+    .lightTheme{
+      --primary-color: rgba(196, 199, 202, 0.845);
+
+    } 
+    .color{
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+    }
+  </style>
+
+</head>
+
+<body class="color">
+  <div><img id="iconId" src="../Assets/sun.png" alt="" class=" h-5 w-5 m-5 cursor-pointer ml-auto"></div>
+  <div class="main flex items-center gap-5 flex-col ">
+    <div class="heading font-bold text-3xl underline" >Rock Paper Scissor</div>
+    <div class="images flex gap-1 ">
+      <div id="img1"><img class="h-44 w-44 cursor-pointer" src="../Assets/rock.jpeg" alt="paper"></div>
+      <div id="img2"><img class="h-44 w-44 cursor-pointer" src="../Assets/paper.jpeg" alt="rock"></div>
+      <div id="img3"><img class="h-44 w-44 cursor-pointer" src="../Assets/scissor.jpeg" alt="scissor"></div>
+    </div>
+    <button id="displayBtn" class=" bg-black  rounded-2xl px-7 py-1">Select Yours</button>
+    <button id="resetBtn" class=" bg-black rounded-2xl px-8 py-1">New Game</button>
+
+    <div class="text-2xl font-bold"><p id="you">You Win: 0</p><p id="computer">Computer Win: 0</p></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
